@@ -19,7 +19,6 @@ int search(int n){
     for(int i= 1;i<= n/2;i++) ans+= search(i);
     map[n]= ans;
     return ans;
-    
 }
 
 int main() {
