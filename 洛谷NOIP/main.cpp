@@ -8,8 +8,24 @@
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+int map[1000];
+
+int search(int n){
+    if(map[n]!= 0) return map[n];
+    int ans= 1;
+    
+    for(int i= 1;i<= n/2;i++) ans+= search(i);
+    map[n]= ans;
+    return ans;
+    
+}
+
+int main() {
+    int n;//, times= 0;
+    
+    cin>> n;
+    cout<< search(n);
     return 0;
 }
